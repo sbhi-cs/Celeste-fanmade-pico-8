@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b2sw8hf1xybyt"]
+
+[ext_resource type="Script" uid="uid://ccxa4fu15pnh8" path="res://prototypechar.gd" id="1_47l4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gqpt"]
+size = Vector2(32, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=715284192]
+script = ExtResource("1_47l4n")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1512393570]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, -16, -16, -16, -16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=215809609]
+shape = SubResource("RectangleShape2D_1gqpt")

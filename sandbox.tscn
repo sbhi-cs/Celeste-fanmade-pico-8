@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wyujq6gmaino"]
+
+[ext_resource type="PackedScene" uid="uid://b2sw8hf1xybyt" path="res://prototypechar.tscn" id="1_3h184"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h184"]
+size = Vector2(960, 20)
+
+[node name="Sandbox" type="Node2D" unique_id=27077847]
+
+[node name="playertest" parent="." unique_id=715284192 instance=ExtResource("1_3h184")]
+position = Vector2(483, 156)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1694462855]
+position = Vector2(0, 360)
+
+[node name="platformhitbox" type="CollisionShape2D" parent="StaticBody2D" unique_id=31887937]
+position = Vector2(480, 10)
+shape = SubResource("RectangleShape2D_3h184")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=1570080195]
+polygon = PackedVector2Array(0, 0, 960, 0, 960, 9.544098, 960, 20, 0, 20)
