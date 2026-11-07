@@ -1,5 +1,7 @@
+# READ LINE 50 WHEN STARTING TOMORROW/TODAY
 extends CharacterBody2D
 
+@onready var polygonchild = get_node("Polygon2D")
 
 var SPEED = 200.0
 var JUMP_VELOCITY = -375.0
@@ -9,9 +11,11 @@ var dashcount = 0
 var dashdirection = Vector2(0, 0) # TURN ALL DASH RELATED VARIABLES INTO A STRUCT MAYBE
 var gravitymult = 0
 var timer = 0
+var wallchecktimer = 0
 var coyotestate = false
 var coyoteframes = 5
 var previousframeonground = true
+var wallcheck = false
 
 func _physics_process(delta: float) -> void:
 	if timer <= 0 && is_dashing == true:
@@ -21,7 +25,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
 	if not is_on_floor() && is_dashing == false: # we want to ignore physics if character is dashing
-		if abs(velocity.y) <= 20:
+		if wallcheck == true && velocity.y > 30:
+			velocity.y = 80
+		elif abs(velocity.y) <= 20:
 			gravitymult = 0.8
 			velocity.y += get_gravity().y * gravitymult * delta
 		elif Input.is_action_pressed("ui_up") && velocity.y < 0:
@@ -31,24 +37,43 @@ func _physics_process(delta: float) -> void:
 			if gravitymult < 1.3:
 				gravitymult += 0.1
 			velocity.y += get_gravity().y * gravitymult * delta
-
-	# Handle jump.
-	if Input.is_action_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction && is_dashing == false:
+	if direction && is_dashing == false && wallchecktimer <= 0:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x *= 0.8
+	# add player direction for dash, and then start level making!!!
 		
-	if global_position.x > 976:
-		global_position.x = -16
-		dashcount = 0
-	elif global_position.x < -16:
-		global_position.x = 976
+		# Handle jump.
+	if Input.is_action_pressed("ui_up") and (is_on_floor() || is_on_wall()):
+		if is_on_wall():
+			velocity.x = (1000 * get_wall_normal().x)
+			wallchecktimer = 0.28
+			if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left"):
+				wallchecktimer = 0.45
+				velocity.x *= 1.35
+		velocity.y = JUMP_VELOCITY
+	
+	# wall physics
+	if is_on_wall():
+		if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left"):
+			wallcheck = true
+		else:
+			wallcheck = false
+	else:
+		wallcheck = false
+	if wallchecktimer > 0:
+		wallchecktimer -= delta
+		
+	if global_position.x > 944:
+		global_position.x = 944
+	elif global_position.x < 16:
+		global_position.x = 16
 		dashcount = 0
 	if global_position.y > 556:
 		global_position.y = -16
@@ -81,6 +106,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = (dashspeed * dashdirection.x * 1.5) # the 1.5 just makes the physics work nicer
 		velocity.y = (dashspeed * dashdirection.y * 1.4) # same with the 1.4, the physics just works nicer
 
+	#recolouring based on dash
+	if dashcount == 1:
+		polygonchild.color = Color("04D9FF")
+	else:
+		polygonchild.color = Color.CRIMSON
+	
 	move_and_slide()
 
 func get_direction():
@@ -98,10 +129,7 @@ func get_direction():
 		dashdirection.x = -1
 	if Input.is_action_pressed("ui_right"):
 		dashdirection.x = 1
-		
-
 	# for left/right
 	# this automatically assumes to not dash if player isnt actively pressing left
 	# fix this later to dash the direction the player is facing
-		
 		
