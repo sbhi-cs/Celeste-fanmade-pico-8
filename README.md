@@ -19,6 +19,8 @@ Movement:
 UI: 
 * CTRL+M to go back to menu from main screen
 
+### You Play as the Red/Blue Cube!
+
 ## Disclaimer
 The current version is only a physics demo
 There are no levels **yet**
