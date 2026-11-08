@@ -1,6 +1,9 @@
 # Celeste but not!
 This is my remake of Celeste (the PICO-8 version)
-Celeste is one of my favorite games, and being able to make my own remake of it is so cool!
+
+## Why did I make this?
+* Celeste is one of my favourite video games of all time
+* I just recently learned Godot, and knew I had to make my own version of it
 
 ## How to download
 * Go to the release link: <https://github.com/sbhi-cs/Celeste-fanmade-pico-8/releases/tag/V1.0.0>
