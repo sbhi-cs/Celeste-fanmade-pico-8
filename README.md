@@ -1,11 +1,14 @@
 # Celeste but not!
 This is my remake of Celeste (the PICO-8 version)
+For those who don't know what Celeste is (somehow):
+Celeste is a 2D platformer game, with a dashing mechanic!
+I decided to make my own version of it using Godot
 
 ## Why did I make this?
 * Celeste is one of my favourite video games of all time
 * I just recently learned Godot, and knew I had to make my own version of it
 
-## How to download
+## How to download and run
 * Go to the release link: <https://github.com/sbhi-cs/Celeste-fanmade-pico-8/releases/tag/V1.0.0>
 * Donwload the .zip file based on your OS
 * No support for mac, sorry..
