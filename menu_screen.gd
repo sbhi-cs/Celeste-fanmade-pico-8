@@ -12,17 +12,18 @@ func _process(delta: float) -> void:
 
 
 func _on_playbutton_pressed() -> void:
-	pass 
+	get_tree().change_scene_to_file("res://sandbox.tscn")
 	# make so that when pressed you go to a level select screen 
 	# or sandbox mode screen
 
 
 func _on_controlsbutton_pressed() -> void:
-	pass 
+	get_tree().change_scene_to_file("res://helpscreen.tscn")
 	# make so that when pressed go to a UI screen that tells all controls
 	# ex: dash = Z
+	# also maybe change this to a help tab instead of just controls
+	# like its controls but with some other things too maybe
 
 
 func _on_quitbutton_pressed() -> void:
-	pass
-	# make so that when pressed quit game/close program
+	get_tree().quit(0)
