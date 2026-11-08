@@ -3,7 +3,7 @@ This is my remake of Celeste (the PICO-8 version)
 Celeste is one of my favorite games, and being able to make my own remake of it is so cool!
 
 ## How to download
-* Go to the release link: (put link here)
+* Go to the release link: <https://github.com/sbhi-cs/Celeste-fanmade-pico-8/releases/tag/V1.0.0>
 * Donwload the .zip file based on your OS
 * No support for mac, sorry..
 
@@ -24,6 +24,10 @@ The current version is only a physics demo
 There are no levels **yet**
 
 ## Images
-(insert images here)
+<img width="945" height="530" alt="image" src="https://github.com/user-attachments/assets/f1ccd3f7-4761-46a8-9917-932ed7fbabbf" />
+
+
+<img width="940" height="512" alt="image" src="https://github.com/user-attachments/assets/b15c844b-ac1a-4910-bb79-a9ee3582532d" />
+
 
 # Have Fun!
