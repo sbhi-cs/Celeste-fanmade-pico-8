@@ -1,0 +1,61 @@
+[gd_scene format=4 uid="uid://dmyam1qv7rm2j"]
+
+[ext_resource type="PackedScene" uid="uid://gummju5c0y6e" path="res://bg1.tscn" id="1_tvv21"]
+[ext_resource type="Texture2D" uid="uid://b78bbix5eyo21" path="res://block2.png" id="2_dsw6v"]
+[ext_resource type="FontFile" uid="uid://dlgx1byao0gr" path="res://ByteBounce.ttf" id="3_sefsa"]
+[ext_resource type="PackedScene" uid="uid://b2sw8hf1xybyt" path="res://char1.tscn" id="4_iuqe0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmr8i"]
+texture = ExtResource("2_dsw6v")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_4cvag"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_xmr8i")
+
+[sub_resource type="LabelSettings" id="LabelSettings_43j0y"]
+font = ExtResource("3_sefsa")
+font_size = 30
+
+[node name="Stage_3" type="Node2D" unique_id=1258435919]
+
+[node name="bg1" parent="." unique_id=763471595 instance=ExtResource("1_tvv21")]
+offset_left = 960.0
+offset_top = 0.0
+offset_right = 1500.0991
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=688677241]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAACAAAAAAAGAA4AAAACAAEAAAAGAA8AAAACAAEAAAAGABAAAAACAAEAAAAAAA4AAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAADAA4AAAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAAFAA8AAAABAAEAAAAFABAAAAABAAEAAAAEABAAAAABAAEAAAADABAAAAABAAEAAAACABAAAAABAAEAAAABABAAAAABAAEAAAAAABAAAAABAAEAAAAAAA8AAAABAAEAAAABAA8AAAABAAEAAAACAA8AAAABAAEAAAADAA8AAAABAAEAAAAEAA8AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_4cvag")
+
+[node name="Label2" type="Label" parent="TileMapLayer" unique_id=1714608602]
+offset_left = 59.0
+offset_top = 52.75
+offset_right = 234.5
+offset_bottom = 121.75
+text = "KEEP BUILDING STAGES FROM HERE"
+label_settings = SubResource("LabelSettings_43j0y")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="character" parent="." unique_id=715284192 instance=ExtResource("4_iuqe0")]
+position = Vector2(48, 400)

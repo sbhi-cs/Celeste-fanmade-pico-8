@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var polygonchild = get_node("Polygon2D")
 
 var SPEED = 200.0
-var JUMP_VELOCITY = -375.0
+var jumpvelocity = -375.0
 var dashspeed = 500
 var is_dashing = false
 var dashcount = 0
@@ -13,7 +13,7 @@ var gravitymult = 0
 var timer = 0
 var wallchecktimer = 0
 var coyotestate = false
-var coyoteframes = 5
+var coyoteframes = 0.12
 var previousframeonground = true
 var wallcheck = false
 
@@ -50,14 +50,18 @@ func _physics_process(delta: float) -> void:
 	# add player direction for dash, and then start level making!!!
 		
 		# Handle jump.
-	if Input.is_action_pressed("ui_up") and (is_on_floor() || is_on_wall()):
+	if Input.is_action_pressed("ui_up") and (is_on_floor() || coyotestate == true || is_on_wall()):
 		if is_on_wall():
 			velocity.x = (1000 * get_wall_normal().x)
 			wallchecktimer = 0.28
 			if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left"):
 				wallchecktimer = 0.45
 				velocity.x *= 1.35
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jumpvelocity
+		if coyotestate == true:
+			velocity.y *= 0.9
+		
+		
 	
 	# wall physics
 	if is_on_wall():
@@ -81,12 +85,11 @@ func _physics_process(delta: float) -> void:
 	if previousframeonground == true && !is_on_floor() && velocity.y >= 0:
 		coyotestate = true
 	if coyotestate == true:
-		velocity.y = 0
-		coyoteframes -= 1
-	if coyoteframes == 0:
+		coyoteframes -= delta
+	if coyoteframes <= 0:
 		coyotestate = false
-		coyoteframes = 2
-	previousframeonground = is_on_floor()
+		coyoteframes = 0.12
+	previousframeonground = is_on_floor() # fix bug where you can't jump during coyote frames
 		
 	get_direction()
 		
@@ -132,4 +135,3 @@ func get_direction():
 	# for left/right
 	# this automatically assumes to not dash if player isnt actively pressing left
 	# fix this later to dash the direction the player is facing
-		

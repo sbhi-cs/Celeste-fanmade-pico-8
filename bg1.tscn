@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://gummju5c0y6e"]
+
+[sub_resource type="Gradient" id="Gradient_cojph"]
+offsets = PackedFloat32Array(0, 0.61778843, 1)
+colors = PackedColorArray(1, 0.48235294, 0.5647059, 1, 0.972549, 0.69411767, 0.58431375, 1, 1, 0.6392157, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1gqpt"]
+gradient = SubResource("Gradient_cojph")
+
+[node name="bg1" type="TextureRect" unique_id=763471595]
+offset_left = 960.1079
+offset_top = 3.3269076e-05
+offset_right = 1500.207
+offset_bottom = 960.108
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_1gqpt")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1265427715]
+repeat_size = Vector2(0, 960)
+autoscroll = Vector2(0, 12)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D" unique_id=45302742]
+offset_left = 117.0
+offset_top = 738.35803
+offset_right = 157.0
+offset_bottom = 876.44867
+
+[node name="ColorRect2" type="ColorRect" parent="Parallax2D" unique_id=203488722]
+offset_left = 85.0
+offset_top = 674.3579
+offset_right = 126.88635
+offset_bottom = 818.96075
+
+[node name="ColorRect3" type="ColorRect" parent="Parallax2D" unique_id=858108965]
+offset_left = 77.0
+offset_top = 402.35797
+offset_right = 117.0
+offset_bottom = 540.4486
+
+[node name="ColorRect4" type="ColorRect" parent="Parallax2D" unique_id=2085756025]
+offset_left = 45.0
+offset_top = 338.3579
+offset_right = 85.0
+offset_bottom = 476.44855
+
+[node name="ColorRect5" type="ColorRect" parent="Parallax2D" unique_id=892490318]
+offset_left = 164.99994
+offset_top = 114.35797
+offset_right = 204.99994
+offset_bottom = 252.44861
+
+[node name="ColorRect6" type="ColorRect" parent="Parallax2D" unique_id=1700805472]
+offset_left = 132.99997
+offset_top = 50.35791
+offset_right = 172.99997
+offset_bottom = 188.44855
