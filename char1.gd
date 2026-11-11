@@ -19,6 +19,9 @@ var wallcheck = false
 
 signal changescreen
 
+func _ready():
+	Eventbus.resetdash.connect(_on_dashcrystal_collected)
+
 func _physics_process(delta: float) -> void:
 	if timer <= 0 && is_dashing == true:
 		is_dashing = false # resets dash state to false when timer for physics ignore runs out
@@ -80,7 +83,6 @@ func _physics_process(delta: float) -> void:
 		changescreen.emit()
 	elif global_position.x < 16:
 		global_position.x = 16
-		dashcount = 0
 	if global_position.y > 556:
 		global_position = Vector2(48 , 400)
 	elif global_position.y < 16:
@@ -140,3 +142,6 @@ func get_direction():
 	# this automatically assumes to not dash if player isnt actively pressing left
 	# fix this later to dash the direction the player is facing
 		
+
+func _on_dashcrystal_collected():
+	dashcount = 0

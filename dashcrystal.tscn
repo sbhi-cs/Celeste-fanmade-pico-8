@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dor43l7b5vq2r"]
+
+[ext_resource type="Texture2D" uid="uid://dfcsk5aqi0dww" path="res://dashcrystal.png" id="1_kftet"]
+[ext_resource type="Script" uid="uid://ug5t0wsjx23a" path="res://dashcrystalarea.gd" id="2_5i35w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gqpt"]
+size = Vector2(5, 5)
+
+[node name="dashcrystal" type="Sprite2D" unique_id=277871119]
+scale = Vector2(6, 6)
+texture = ExtResource("1_kftet")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=807288511]
+script = ExtResource("2_5i35w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1403184068]
+position = Vector2(0, 0.59999996)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_1gqpt")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
