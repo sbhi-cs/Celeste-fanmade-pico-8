@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://djtg57m1s7ar4"]
+
+[sub_resource type="Gradient" id="Gradient_lsfjm"]
+colors = PackedColorArray(0.06666667, 0.105882354, 0.16078432, 1, 0.27450982, 0.33333334, 0.40784314, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1gqpt"]
+gradient = SubResource("Gradient_lsfjm")
+
+[node name="bg2" type="TextureRect" unique_id=1014881311]
+offset_left = 960.0596
+offset_top = 1.8361387e-05
+offset_right = 1500.0823
+offset_bottom = 960.0596
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_1gqpt")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1758549485]
+repeat_size = Vector2(0, 960)
+autoscroll = Vector2(0, 12)
+repeat_times = 2
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D" unique_id=1372514939]
+offset_left = 141.0
+offset_top = 723.5156
+offset_right = 181.0
+offset_bottom = 909.0596
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Parallax2D" unique_id=1755651835]
+offset_left = 101.0
+offset_top = 643.5156
+offset_right = 141.0
+offset_bottom = 829.0596
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Parallax2D" unique_id=1733233860]
+offset_left = 196.99994
+offset_top = 411.51563
+offset_right = 236.99994
+offset_bottom = 597.0596
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Parallax2D" unique_id=884178238]
+offset_left = 156.99994
+offset_top = 331.51563
+offset_right = 196.99994
+offset_bottom = 517.0596
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Parallax2D" unique_id=1366700623]
+offset_left = 76.99994
+offset_top = 115.515625
+offset_right = 116.99994
+offset_bottom = 301.05957
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Parallax2D" unique_id=2070330015]
+offset_left = 36.99994
+offset_top = 35.515625
+offset_right = 76.99994
+offset_bottom = 221.05957
+color = Color(0.33182234, 0.33182234, 0.33182234, 1)

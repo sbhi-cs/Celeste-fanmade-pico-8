@@ -12,15 +12,20 @@ var dashdirection = Vector2(0, 0) # TURN ALL DASH RELATED VARIABLES INTO A STRUC
 var gravitymult = 0
 var timer = 0
 var wallchecktimer = 0
+var groundtimer = 0.05
 var coyotestate = false
 var coyoteframes = 0.12
 var previousframeonground = true
 var wallcheck = false
+var bubblestate = false #for bubble work on this after making the bubble
+var bubbletimer = 0
 
 signal changescreen
 
 func _ready():
 	Eventbus.resetdash.connect(_on_dashcrystal_collected)
+	Eventbus.enterbubble.connect(_on_bubble_entered)
+	Eventbus.bubbledash.connect(_on_bubbledash)
 
 func _physics_process(delta: float) -> void:
 	if timer <= 0 && is_dashing == true:
@@ -105,16 +110,26 @@ func _physics_process(delta: float) -> void:
 			dashcount += 1
 			timer = 0.15
 	
-	if is_on_floor() && is_dashing == false:
-		is_dashing = false
-		dashcount = 0
-		timer = 0.15
+	if is_on_floor():
+		if groundtimer > 0:
+			groundtimer -= delta
+		else:
+			groundtimer = 0.05
+			dashcount = 0
+	
+	if bubbletimer > 0: # MAKE SO THAT AFTER LEAVING BUBBLE DASH GETS RESTORED, BUT ONLY AFTER LEAVING BUBBLE
+		bubbletimer -= delta
+	else:
+		pass
 	
 	if is_dashing == true:
 		timer -= delta
 		velocity.x = (dashspeed * dashdirection.x * 1.5) # the 1.5 just makes the physics work nicer
 		velocity.y = (dashspeed * dashdirection.y * 1.4) # same with the 1.4, the physics just works nicer
-
+	if bubblestate == true:
+		velocity = Vector2(0, 0)
+		visible = false
+	
 	#recolouring based on dash
 	if dashcount == 1:
 		polygonchild.color = Color("04D9FF")
@@ -144,4 +159,18 @@ func get_direction():
 		
 
 func _on_dashcrystal_collected():
+	dashcount = 0
+
+func _on_bubble_entered(bubbleposition: Vector2):
+	global_position = bubbleposition
+	bubblestate = true
+
+func _on_bubbledash():
+	get_direction()
+	velocity.x = (dashspeed * dashdirection.x * 1.5) # the 1.5 just makes the physics work nicer
+	velocity.y = (dashspeed * dashdirection.y * 1.4) # same with the 1.4, the physics just works nicer
+	print("dashreset")
+	visible = true
+	bubblestate = false
+	bubbletimer = 0.05
 	dashcount = 0
