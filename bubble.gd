@@ -21,17 +21,17 @@ func _process(delta: float) -> void:
 	
 	if inbubble == true:
 		if Input.is_action_pressed("updashcheck"):
-			bubbledirection.y = -10
+			bubbledirection.y = -5
 		elif Input.is_action_pressed("ui_down"):
-			bubbledirection.y = 10
+			bubbledirection.y = 5
 		else:
 			bubbledirection.y = 0
 		# for up/down
 	
 		if Input.is_action_pressed("ui_left"):
-			bubbledirection.x = -10
+			bubbledirection.x = -5
 		elif Input.is_action_pressed("ui_right"):
-			bubbledirection.x = 10
+			bubbledirection.x = 5
 		else:
 			bubbledirection.x = 0
 		
@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 			Eventbus.bubbledash.emit()
 			sprite.visible = false
 			hitbox.set_deferred("disabled", true)
-			timer = 3
+			timer = 2
 		sprite.global_position = Vector2(bubbleposition.x + bubbledirection.x, bubbleposition.y + bubbledirection.y)
 	
 

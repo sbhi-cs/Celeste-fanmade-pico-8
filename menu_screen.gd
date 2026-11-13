@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_playbutton_pressed() -> void:
-	get_tree().change_scene_to_file("res://sandbox.tscn")
+	get_tree().change_scene_to_file("res://modeselect_screen.tscn")
 	# make so that when pressed you go to a level select screen 
 	# or sandbox mode screen
 

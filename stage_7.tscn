@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://bv0qmteuke2xe"]
+
+[ext_resource type="PackedScene" uid="uid://djtg57m1s7ar4" path="res://bg2.tscn" id="1_1tghs"]
+[ext_resource type="Texture2D" uid="uid://bv20ubiqrrkms" path="res://block2 copy.png" id="2_m0upo"]
+[ext_resource type="PackedScene" uid="uid://b2sw8hf1xybyt" path="res://char1.tscn" id="3_k71jh"]
+[ext_resource type="FontFile" uid="uid://dlgx1byao0gr" path="res://ByteBounce.ttf" id="4_m0upo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rish"]
+texture = ExtResource("2_m0upo")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_t5hsw"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8rish")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1gqpt"]
+font = ExtResource("4_m0upo")
+font_size = 72
+
+[node name="Stage_7" type="Node2D" unique_id=147521111]
+
+[node name="bg2" parent="." unique_id=1014881311 instance=ExtResource("1_1tghs")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720117100]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAABAA0AAAABAAAAAAABAA4AAAABAAEAAAABAA8AAAABAAEAAAABABAAAAABAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAEAAAACAA8AAAABAAEAAAACABAAAAABAAEAAAADAA0AAAABAAAAAAADAA4AAAABAAEAAAADAA8AAAABAAEAAAADABAAAAABAAEAAAAEAA0AAAABAAAAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEABAAAAABAAEAAAAFAA0AAAACAAAAAAAFAA4AAAACAAEAAAAFAA8AAAACAAEAAAAFABAAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_t5hsw")
+
+[node name="character" parent="." unique_id=715284192 instance=ExtResource("3_k71jh")]
+position = Vector2(48, 400)
+
+[node name="Label" type="Label" parent="character" unique_id=852654527]
+offset_left = 177.0
+offset_top = -151.0
+offset_right = 867.0
+offset_bottom = -101.0
+text = "KEEP BUILDING FROM HERE"
+label_settings = SubResource("LabelSettings_1gqpt")

@@ -1,9 +1,16 @@
 [gd_scene format=4 uid="uid://bkj5o1ikxdywu"]
 
+[ext_resource type="Script" uid="uid://f42oupxx06hk" path="res://stage.gd" id="1_bxg2w"]
 [ext_resource type="PackedScene" uid="uid://djtg57m1s7ar4" path="res://bg2.tscn" id="1_jcjfo"]
+[ext_resource type="PackedScene" uid="uid://maju6q1q2llv" path="res://spike2.tscn" id="2_fo2l6"]
+[ext_resource type="FontFile" uid="uid://dlgx1byao0gr" path="res://ByteBounce.ttf" id="2_oir3g"]
 [ext_resource type="Texture2D" uid="uid://bv20ubiqrrkms" path="res://block2 copy.png" id="2_pi7pv"]
 [ext_resource type="PackedScene" uid="uid://b2sw8hf1xybyt" path="res://char1.tscn" id="3_fo2l6"]
 [ext_resource type="PackedScene" uid="uid://ne52pcuqu3hk" path="res://bubble.tscn" id="4_pi7pv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1gqpt"]
+font = ExtResource("2_oir3g")
+font_size = 30
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oir3g"]
 texture = ExtResource("2_pi7pv")
@@ -33,16 +40,200 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oir3g")
 
 [node name="Stage_6" type="Node2D" unique_id=2041017665]
+script = ExtResource("1_bxg2w")
 
 [node name="bg2" parent="." unique_id=1014881311 instance=ExtResource("1_jcjfo")]
 
+[node name="Label" type="Label" parent="." unique_id=1743305096]
+offset_left = 46.0
+offset_top = 43.0
+offset_right = 292.0
+offset_bottom = 112.0
+text = "BUBBLES ACT LIKE A DASH, AND ALSO RESET YOUR DASH"
+label_settings = SubResource("LabelSettings_1gqpt")
+autowrap_mode = 2
+
+[node name="spike" parent="." unique_id=437397346 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 516)
+rotation = -3.1415925
+
+[node name="spike2" parent="." unique_id=1180598935 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 474)
+rotation = -3.1415925
+
+[node name="spike3" parent="." unique_id=1641101376 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 432)
+rotation = -3.1415925
+
+[node name="spike4" parent="." unique_id=67167677 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 390)
+rotation = -3.1415925
+
+[node name="spike5" parent="." unique_id=2117457625 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 348)
+rotation = -3.1415925
+
+[node name="spike6" parent="." unique_id=658309103 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 306)
+rotation = -3.1415925
+
+[node name="spike7" parent="." unique_id=2136592939 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 264)
+rotation = -3.1415925
+
+[node name="spike8" parent="." unique_id=2094899817 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 222)
+rotation = -3.1415925
+
+[node name="spike9" parent="." unique_id=851652365 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 180)
+rotation = -3.1415925
+
+[node name="spike10" parent="." unique_id=1158362208 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 138)
+rotation = -3.1415925
+
+[node name="spike11" parent="." unique_id=1254773654 instance=ExtResource("2_fo2l6")]
+position = Vector2(288, 96)
+rotation = -3.1415925
+
+[node name="spike12" parent="." unique_id=1609395847 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 153)
+rotation = -3.1415925
+
+[node name="spike13" parent="." unique_id=2044722109 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 198)
+rotation = -3.1415925
+
+[node name="spike14" parent="." unique_id=904688661 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 243)
+rotation = -3.1415925
+
+[node name="spike15" parent="." unique_id=2024727654 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 288)
+rotation = -3.1415925
+
+[node name="spike16" parent="." unique_id=2052074295 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 333)
+rotation = -3.1415925
+
+[node name="spike17" parent="." unique_id=793770961 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 376)
+rotation = -3.1415925
+
+[node name="spike18" parent="." unique_id=221042697 instance=ExtResource("2_fo2l6")]
+position = Vector2(480, 421)
+rotation = -3.1415925
+
+[node name="spike19" parent="." unique_id=859045572 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 153)
+
+[node name="spike26" parent="." unique_id=1232344465 instance=ExtResource("2_fo2l6")]
+position = Vector2(774, 128)
+rotation = -1.5707964
+
+[node name="spike27" parent="." unique_id=1530429717 instance=ExtResource("2_fo2l6")]
+position = Vector2(729, 128)
+rotation = -1.5707964
+
+[node name="spike28" parent="." unique_id=1237519070 instance=ExtResource("2_fo2l6")]
+position = Vector2(684, 128)
+rotation = -1.5707964
+
+[node name="spike29" parent="." unique_id=436369160 instance=ExtResource("2_fo2l6")]
+position = Vector2(639, 128)
+rotation = -1.5707964
+
+[node name="spike30" parent="." unique_id=453696594 instance=ExtResource("2_fo2l6")]
+position = Vector2(594, 128)
+rotation = -1.5707964
+
+[node name="spike31" parent="." unique_id=678993941 instance=ExtResource("2_fo2l6")]
+position = Vector2(549, 128)
+rotation = -1.5707964
+
+[node name="spike32" parent="." unique_id=1200604469 instance=ExtResource("2_fo2l6")]
+position = Vector2(504, 128)
+rotation = -1.5707964
+
+[node name="spike33" parent="." unique_id=1606561884 instance=ExtResource("2_fo2l6")]
+position = Vector2(774, 448)
+rotation = 1.5707964
+
+[node name="spike34" parent="." unique_id=817370908 instance=ExtResource("2_fo2l6")]
+position = Vector2(729, 448)
+rotation = 1.5707964
+
+[node name="spike35" parent="." unique_id=113251880 instance=ExtResource("2_fo2l6")]
+position = Vector2(684, 448)
+rotation = 1.5707964
+
+[node name="spike36" parent="." unique_id=1479656988 instance=ExtResource("2_fo2l6")]
+position = Vector2(639, 448)
+rotation = 1.5707964
+
+[node name="spike37" parent="." unique_id=1670500862 instance=ExtResource("2_fo2l6")]
+position = Vector2(594, 448)
+rotation = 1.5707964
+
+[node name="spike38" parent="." unique_id=1488577012 instance=ExtResource("2_fo2l6")]
+position = Vector2(549, 448)
+rotation = 1.5707964
+
+[node name="spike39" parent="." unique_id=1332657829 instance=ExtResource("2_fo2l6")]
+position = Vector2(504, 448)
+rotation = 1.5707964
+
+[node name="spike20" parent="." unique_id=764869508 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 198)
+
+[node name="spike21" parent="." unique_id=1942543259 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 243)
+
+[node name="spike22" parent="." unique_id=192277585 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 288)
+
+[node name="spike23" parent="." unique_id=1786372865 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 333)
+
+[node name="spike24" parent="." unique_id=1044059269 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 376)
+
+[node name="spike25" parent="." unique_id=688860455 instance=ExtResource("2_fo2l6")]
+position = Vector2(800, 421)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=599135393]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAACAAAAAAAFAA4AAAACAAEAAAAFAA8AAAACAAEAAAAFABAAAAACAAEAAAAEABAAAAABAAEAAAAEAA8AAAABAAEAAAAEAA4AAAABAAEAAAADAA4AAAABAAEAAAACAA4AAAABAAEAAAABAA4AAAABAAEAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAABAA8AAAABAAEAAAACAA8AAAABAAEAAAADAA8AAAABAAEAAAADABAAAAABAAEAAAACABAAAAABAAEAAAABABAAAAABAAEAAAAAABAAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAACAAAAAAAFAA4AAAACAAEAAAAFAA8AAAACAAEAAAAFABAAAAACAAEAAAAEABAAAAABAAEAAAAEAA8AAAABAAEAAAAEAA4AAAABAAEAAAADAA4AAAABAAEAAAACAA4AAAABAAEAAAABAA4AAAABAAEAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAABAA8AAAABAAEAAAACAA8AAAABAAEAAAADAA8AAAABAAEAAAADABAAAAABAAEAAAACABAAAAABAAEAAAABABAAAAABAAEAAAAAABAAAAABAAEAAAAAAAUAAAACAAIAAAAAAAQAAAACAAAAAAAJABAAAAAAAAEAAAAJAA8AAAAAAAEAAAAJAA4AAAAAAAEAAAAJAA0AAAAAAAEAAAAJAAwAAAAAAAEAAAAJAAsAAAAAAAEAAAAJAAoAAAAAAAEAAAAJAAkAAAAAAAEAAAAJAAgAAAAAAAEAAAAJAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAUAAAAAAAEAAAAJAAQAAAAAAAEAAAAJAAMAAAAAAAEAAAAJAAIAAAAAAAAAAAAKAAIAAAACAAAAAAAKAAMAAAACAAEAAAAKAAQAAAACAAEAAAAKAAUAAAACAAEAAAAKAAYAAAACAAEAAAAKAAcAAAACAAEAAAAKAAgAAAACAAEAAAAKAAkAAAACAAEAAAAKAAoAAAACAAEAAAAKAAsAAAACAAEAAAAKAAwAAAACAAEAAAAKAA0AAAACAAEAAAAKAA4AAAACAAEAAAAKAA8AAAACAAEAAAAKABAAAAACAAEAAAARAAAAAAABAAIAAAASAAAAAAABAAIAAAATAAAAAAABAAIAAAAUAAAAAAABAAIAAAAVAAAAAAABAAIAAAAWAAAAAAABAAIAAAAXAAAAAAABAAIAAAAYAAAAAAABAAIAAAAZAAAAAAABAAIAAAAaAAAAAAABAAIAAAAbAAAAAAACAAIAAAAdAAEAAAAAAAEAAAAdAAIAAAAAAAEAAAAdAAMAAAAAAAEAAAAdAAAAAAAAAAAAAAAdAAQAAAAAAAEAAAAdAAUAAAAAAAEAAAAdAAYAAAAAAAEAAAAdAAcAAAAAAAEAAAAdAAgAAAAAAAEAAAAdAAkAAAAAAAEAAAAdAAoAAAAAAAEAAAAdAAsAAAAAAAEAAAAdAAwAAAAAAAEAAAAdAA0AAAAAAAIAAAAbABAAAAAAAAAAAAAcABAAAAABAAAAAAAdABAAAAABAAAAAAAQAAAAAAAAAAIAAAAPAAUAAAAAAAEAAAAPAAYAAAAAAAEAAAAPAAcAAAAAAAEAAAAPAAgAAAAAAAEAAAAPAAkAAAAAAAEAAAAPAAoAAAAAAAEAAAAPAAsAAAAAAAEAAAAPAAwAAAAAAAEAAAAPAA0AAAAAAAIAAAAYAA0AAAACAAIAAAAYAAwAAAACAAEAAAAYAAsAAAACAAEAAAAYAAoAAAACAAEAAAAYAAkAAAACAAEAAAAYAAgAAAACAAEAAAAYAAcAAAACAAEAAAAYAAYAAAACAAEAAAAYAAUAAAACAAEAAAAQAAUAAAABAAEAAAARAAUAAAABAAEAAAASAAUAAAABAAEAAAATAAUAAAABAAEAAAAUAAUAAAABAAEAAAAVAAUAAAABAAEAAAAWAAUAAAABAAEAAAAXAAUAAAABAAEAAAAQAAYAAAABAAEAAAARAAYAAAABAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAARAAcAAAABAAEAAAAQAAcAAAABAAEAAAAQAAgAAAABAAEAAAAQAAkAAAABAAEAAAARAAkAAAABAAEAAAARAAgAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAATAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAcAAAABAAEAAAATAAYAAAABAAEAAAAUAAoAAAABAAEAAAAVAAsAAAABAAEAAAAWAAwAAAABAAEAAAAXAA0AAAABAAIAAAAWAA0AAAABAAIAAAAVAA0AAAABAAIAAAAVAAwAAAABAAEAAAAWAAsAAAABAAEAAAAXAAsAAAABAAEAAAAXAAwAAAABAAEAAAAXAAoAAAABAAEAAAAWAAoAAAABAAEAAAAVAAoAAAABAAEAAAAUAAsAAAABAAEAAAAUAAwAAAABAAEAAAAUAA0AAAABAAIAAAATAAoAAAABAAEAAAASAAsAAAABAAEAAAARAAwAAAABAAEAAAAQAA0AAAABAAIAAAAUAAkAAAABAAEAAAAVAAgAAAABAAEAAAAWAAcAAAABAAEAAAAXAAYAAAABAAEAAAASAAoAAAABAAEAAAARAAoAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAARAAsAAAABAAEAAAAQAAwAAAABAAEAAAAVAAkAAAABAAEAAAAWAAkAAAABAAEAAAAWAAgAAAABAAEAAAAXAAgAAAABAAEAAAAXAAcAAAABAAEAAAAXAAkAAAABAAEAAAAUAAgAAAABAAEAAAAUAAcAAAABAAEAAAAVAAcAAAABAAEAAAAWAAYAAAABAAEAAAAVAAYAAAABAAEAAAAUAAYAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAIAAAASAA0AAAABAAIAAAASAAwAAAABAAEAAAARAA0AAAABAAIAAAAPAAQAAAAAAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAAUAAQAAAABAAAAAAAVAAQAAAABAAAAAAAWAAQAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_1gqpt")
 
 [node name="character" parent="." unique_id=715284192 instance=ExtResource("3_fo2l6")]
 position = Vector2(48, 400)
 
 [node name="bubble" parent="." unique_id=1542422764 instance=ExtResource("4_pi7pv")]
-position = Vector2(139.99998, 285)
+position = Vector2(99.999985, 285.00003)
+
+[node name="bubble2" parent="." unique_id=1256070815 instance=ExtResource("4_pi7pv")]
+position = Vector2(419.99997, 69.00006)
+
+[node name="bubble8" parent="." unique_id=1432673253 instance=ExtResource("4_pi7pv")]
+position = Vector2(868, 69.00006)
+
+[node name="bubble7" parent="." unique_id=1031752679 instance=ExtResource("4_pi7pv")]
+position = Vector2(419.99997, 501.0001)
+
+[node name="bubble3" parent="." unique_id=753590339 instance=ExtResource("4_pi7pv")]
+position = Vector2(638.99994, 71.00007)
+scale = Vector2(7, 7)
+
+[node name="bubble6" parent="." unique_id=964567400 instance=ExtResource("4_pi7pv")]
+position = Vector2(638.99994, 503.0001)
+scale = Vector2(7, 7)
+
+[node name="bubble4" parent="." unique_id=1081565014 instance=ExtResource("4_pi7pv")]
+position = Vector2(415.99988, 287.00006)
+scale = Vector2(7, 7)
+
+[node name="bubble5" parent="." unique_id=698883187 instance=ExtResource("4_pi7pv")]
+position = Vector2(871.99994, 287.00006)
+scale = Vector2(7, 7)

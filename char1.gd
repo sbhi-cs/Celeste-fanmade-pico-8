@@ -19,6 +19,7 @@ var previousframeonground = true
 var wallcheck = false
 var bubblestate = false #for bubble work on this after making the bubble
 var bubbletimer = 0
+var bubbletimer2 = 0
 
 signal changescreen
 
@@ -101,7 +102,16 @@ func _physics_process(delta: float) -> void:
 		coyotestate = false
 		coyoteframes = 0.12
 	previousframeonground = is_on_floor() # fix bug where you can't jump during coyote frames
-		
+	
+	
+	if bubbletimer <= 0 && bubbletimer2 > 0:
+		dashcount = 0
+	
+	if bubbletimer > 0:
+		bubbletimer -= delta
+	if bubbletimer2 > 0:
+		bubbletimer2 -= delta
+	
 	get_direction()
 		
 	if Input.is_action_just_pressed("dash"):
@@ -173,4 +183,5 @@ func _on_bubbledash():
 	visible = true
 	bubblestate = false
 	bubbletimer = 0.05
+	bubbletimer2 = 0.06
 	dashcount = 0
