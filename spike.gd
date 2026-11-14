@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "character":
+		Global.deaths += 1
 		body.velocity = Vector2(0, 0)
 		body.global_position = Vector2(48, 400)

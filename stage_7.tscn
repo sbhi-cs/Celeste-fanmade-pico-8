@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://bv0qmteuke2xe"]
 
 [ext_resource type="PackedScene" uid="uid://djtg57m1s7ar4" path="res://bg2.tscn" id="1_1tghs"]
+[ext_resource type="Script" uid="uid://f42oupxx06hk" path="res://stage.gd" id="1_u71ia"]
+[ext_resource type="PackedScene" uid="uid://maju6q1q2llv" path="res://spike2.tscn" id="2_8rish"]
 [ext_resource type="Texture2D" uid="uid://bv20ubiqrrkms" path="res://block2 copy.png" id="2_m0upo"]
 [ext_resource type="PackedScene" uid="uid://b2sw8hf1xybyt" path="res://char1.tscn" id="3_k71jh"]
-[ext_resource type="FontFile" uid="uid://dlgx1byao0gr" path="res://ByteBounce.ttf" id="4_m0upo"]
+[ext_resource type="PackedScene" uid="uid://dor43l7b5vq2r" path="res://dashcrystal.tscn" id="4_m0upo"]
+[ext_resource type="PackedScene" uid="uid://ne52pcuqu3hk" path="res://bubble.tscn" id="5_k71jh"]
+[ext_resource type="FontFile" uid="uid://dlgx1byao0gr" path="res://ByteBounce.ttf" id="7_t5hsw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rish"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u71ia"]
 texture = ExtResource("2_m0upo")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
@@ -30,28 +34,222 @@ texture_region_size = Vector2i(8, 8)
 [sub_resource type="TileSet" id="TileSet_t5hsw"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8rish")
+sources/0 = SubResource("TileSetAtlasSource_u71ia")
 
-[sub_resource type="LabelSettings" id="LabelSettings_1gqpt"]
-font = ExtResource("4_m0upo")
-font_size = 72
+[sub_resource type="LabelSettings" id="LabelSettings_es86f"]
+font = ExtResource("7_t5hsw")
+font_size = 75
 
 [node name="Stage_7" type="Node2D" unique_id=147521111]
+script = ExtResource("1_u71ia")
 
 [node name="bg2" parent="." unique_id=1014881311 instance=ExtResource("1_1tghs")]
 
+[node name="spike2" parent="." unique_id=437397346 instance=ExtResource("2_8rish")]
+position = Vector2(320, 357)
+rotation = -3.1415925
+
+[node name="spike3" parent="." unique_id=2076058339 instance=ExtResource("2_8rish")]
+position = Vector2(320, 315)
+rotation = -3.1415925
+
+[node name="spike4" parent="." unique_id=754060375 instance=ExtResource("2_8rish")]
+position = Vector2(320, 273)
+rotation = -3.1415925
+
+[node name="spike5" parent="." unique_id=1311989088 instance=ExtResource("2_8rish")]
+position = Vector2(320, 231)
+rotation = -3.1415925
+
+[node name="spike6" parent="." unique_id=316680770 instance=ExtResource("2_8rish")]
+position = Vector2(320, 189)
+rotation = -3.1415925
+
+[node name="spike7" parent="." unique_id=1792877410 instance=ExtResource("2_8rish")]
+position = Vector2(320, 147)
+rotation = -3.1415925
+
+[node name="spike8" parent="." unique_id=742098794 instance=ExtResource("2_8rish")]
+position = Vector2(320, 105)
+rotation = -3.1415925
+
+[node name="spike20" parent="." unique_id=784830129 instance=ExtResource("2_8rish")]
+position = Vector2(320, 63)
+rotation = -3.1415925
+
+[node name="spike21" parent="." unique_id=1588715679 instance=ExtResource("2_8rish")]
+position = Vector2(320, 21)
+rotation = -3.1415925
+
+[node name="spike22" parent="." unique_id=1100098659 instance=ExtResource("2_8rish")]
+position = Vector2(384, 357)
+
+[node name="spike23" parent="." unique_id=634817136 instance=ExtResource("2_8rish")]
+position = Vector2(384, 315)
+
+[node name="spike24" parent="." unique_id=968476492 instance=ExtResource("2_8rish")]
+position = Vector2(384, 273)
+
+[node name="spike25" parent="." unique_id=318636444 instance=ExtResource("2_8rish")]
+position = Vector2(384, 231)
+
+[node name="spike26" parent="." unique_id=951512499 instance=ExtResource("2_8rish")]
+position = Vector2(384, 189)
+
+[node name="spike27" parent="." unique_id=1427368788 instance=ExtResource("2_8rish")]
+position = Vector2(384, 147)
+
+[node name="spike28" parent="." unique_id=1969730083 instance=ExtResource("2_8rish")]
+position = Vector2(384, 105)
+
+[node name="spike29" parent="." unique_id=609490827 instance=ExtResource("2_8rish")]
+position = Vector2(384, 63)
+
+[node name="spike30" parent="." unique_id=1774375596 instance=ExtResource("2_8rish")]
+position = Vector2(384, 21)
+
+[node name="spike9" parent="." unique_id=199952091 instance=ExtResource("2_8rish")]
+position = Vector2(640, 517)
+rotation = -3.1415925
+
+[node name="spike10" parent="." unique_id=533960818 instance=ExtResource("2_8rish")]
+position = Vector2(640, 475)
+rotation = -3.1415925
+
+[node name="spike11" parent="." unique_id=975990819 instance=ExtResource("2_8rish")]
+position = Vector2(640, 433)
+rotation = -3.1415925
+
+[node name="spike12" parent="." unique_id=1766204766 instance=ExtResource("2_8rish")]
+position = Vector2(640, 391)
+rotation = -3.1415925
+
+[node name="spike13" parent="." unique_id=2001464875 instance=ExtResource("2_8rish")]
+position = Vector2(640, 349)
+rotation = -3.1415925
+
+[node name="spike14" parent="." unique_id=667092151 instance=ExtResource("2_8rish")]
+position = Vector2(640, 307)
+rotation = -3.1415925
+
+[node name="spike15" parent="." unique_id=1629758943 instance=ExtResource("2_8rish")]
+position = Vector2(640, 265)
+rotation = -3.1415925
+
+[node name="spike16" parent="." unique_id=1385121602 instance=ExtResource("2_8rish")]
+position = Vector2(640, 223)
+rotation = -3.1415925
+
+[node name="spike42" parent="." unique_id=603533117 instance=ExtResource("2_8rish")]
+position = Vector2(928, 519)
+rotation = -3.1415925
+
+[node name="spike43" parent="." unique_id=1356017133 instance=ExtResource("2_8rish")]
+position = Vector2(928, 477)
+rotation = -3.1415925
+
+[node name="spike44" parent="." unique_id=1746274875 instance=ExtResource("2_8rish")]
+position = Vector2(928, 435)
+rotation = -3.1415925
+
+[node name="spike45" parent="." unique_id=1584069675 instance=ExtResource("2_8rish")]
+position = Vector2(928, 393)
+rotation = -3.1415925
+
+[node name="spike46" parent="." unique_id=1882866945 instance=ExtResource("2_8rish")]
+position = Vector2(928, 351)
+rotation = -3.1415925
+
+[node name="spike47" parent="." unique_id=1516702357 instance=ExtResource("2_8rish")]
+position = Vector2(928, 311)
+rotation = -3.1415925
+
+[node name="spike48" parent="." unique_id=789167341 instance=ExtResource("2_8rish")]
+position = Vector2(928, 170)
+rotation = -3.1415925
+
+[node name="spike49" parent="." unique_id=412233899 instance=ExtResource("2_8rish")]
+position = Vector2(928, 128)
+rotation = -3.1415925
+
+[node name="spike50" parent="." unique_id=1386617396 instance=ExtResource("2_8rish")]
+position = Vector2(928, 86)
+rotation = -3.1415925
+
+[node name="spike51" parent="." unique_id=484987347 instance=ExtResource("2_8rish")]
+position = Vector2(928, 44)
+rotation = -3.1415925
+
+[node name="spike52" parent="." unique_id=2118713070 instance=ExtResource("2_8rish")]
+position = Vector2(928, 0)
+rotation = -3.1415925
+
+[node name="spike17" parent="." unique_id=163123147 instance=ExtResource("2_8rish")]
+position = Vector2(640, 181)
+rotation = -3.1415925
+
+[node name="spike18" parent="." unique_id=386157493 instance=ExtResource("2_8rish")]
+position = Vector2(640, 139)
+rotation = -3.1415925
+
+[node name="spike19" parent="." unique_id=581493475 instance=ExtResource("2_8rish")]
+position = Vector2(640, 97)
+rotation = -3.1415925
+
+[node name="spike31" parent="." unique_id=2062780293 instance=ExtResource("2_8rish")]
+position = Vector2(736, 517)
+
+[node name="spike32" parent="." unique_id=615041070 instance=ExtResource("2_8rish")]
+position = Vector2(736, 475)
+
+[node name="spike33" parent="." unique_id=403893919 instance=ExtResource("2_8rish")]
+position = Vector2(736, 433)
+
+[node name="spike34" parent="." unique_id=86994463 instance=ExtResource("2_8rish")]
+position = Vector2(736, 391)
+
+[node name="spike35" parent="." unique_id=167624478 instance=ExtResource("2_8rish")]
+position = Vector2(736, 349)
+
+[node name="spike36" parent="." unique_id=780768405 instance=ExtResource("2_8rish")]
+position = Vector2(736, 307)
+
+[node name="spike37" parent="." unique_id=179892122 instance=ExtResource("2_8rish")]
+position = Vector2(736, 265)
+
+[node name="spike38" parent="." unique_id=1080695615 instance=ExtResource("2_8rish")]
+position = Vector2(736, 223)
+
+[node name="spike39" parent="." unique_id=763298418 instance=ExtResource("2_8rish")]
+position = Vector2(736, 181)
+
+[node name="spike40" parent="." unique_id=29512871 instance=ExtResource("2_8rish")]
+position = Vector2(736, 139)
+
+[node name="spike41" parent="." unique_id=461547494 instance=ExtResource("2_8rish")]
+position = Vector2(736, 97)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720117100]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAABAA0AAAABAAAAAAABAA4AAAABAAEAAAABAA8AAAABAAEAAAABABAAAAABAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAEAAAACAA8AAAABAAEAAAACABAAAAABAAEAAAADAA0AAAABAAAAAAADAA4AAAABAAEAAAADAA8AAAABAAEAAAADABAAAAABAAEAAAAEAA0AAAABAAAAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEABAAAAABAAEAAAAFAA0AAAACAAAAAAAFAA4AAAACAAEAAAAFAA8AAAACAAEAAAAFABAAAAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAABAA0AAAABAAAAAAABAA4AAAABAAEAAAABAA8AAAABAAEAAAABABAAAAABAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAEAAAACAA8AAAABAAEAAAACABAAAAABAAEAAAADAA0AAAABAAAAAAADAA4AAAABAAEAAAADAA8AAAABAAEAAAADABAAAAABAAEAAAAEAA0AAAABAAAAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEABAAAAABAAEAAAAFAA0AAAACAAAAAAAFAA4AAAACAAEAAAAFAA8AAAACAAEAAAAFABAAAAACAAEAAAAMABAAAAAAAAAAAAANABAAAAABAAAAAAAOABAAAAABAAAAAAAPABAAAAACAAAAAAALAAUAAAACAAEAAAALAAYAAAACAAEAAAALAAcAAAACAAEAAAALAAgAAAACAAEAAAALAAkAAAACAAEAAAALAAQAAAACAAEAAAALAAMAAAACAAEAAAALAAIAAAACAAEAAAALAAsAAAACAAIAAAALAAoAAAACAAEAAAAKAAIAAAAAAAEAAAAKAAsAAAAAAAIAAAAKAAMAAAAAAAEAAAAKAAQAAAAAAAEAAAAKAAUAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAKAAgAAAAAAAEAAAAKAAkAAAAAAAEAAAAKAAoAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAAAAAAAAAAEAAAALAAEAAAACAAEAAAALAAAAAAACAAEAAAAUABAAAAAAAAEAAAAUAA8AAAAAAAEAAAAUAA4AAAAAAAEAAAAUAA0AAAAAAAEAAAAUAAwAAAAAAAEAAAAUAAsAAAAAAAEAAAAUAAoAAAAAAAEAAAAUAAkAAAAAAAEAAAAUAAgAAAAAAAEAAAAUAAcAAAAAAAEAAAAUAAYAAAAAAAEAAAAUAAUAAAAAAAEAAAAUAAQAAAAAAAEAAAAUAAMAAAAAAAEAAAAUAAIAAAAAAAAAAAAVAAIAAAABAAAAAAAVAAMAAAABAAEAAAAVAAQAAAABAAEAAAAVAAUAAAABAAEAAAAVAAYAAAABAAEAAAAVAAcAAAABAAEAAAAVAAgAAAABAAEAAAAVAAkAAAABAAEAAAAVAAoAAAABAAEAAAAVAAsAAAABAAEAAAAVAAwAAAABAAEAAAAVAA0AAAABAAEAAAAVAA4AAAABAAEAAAAVAA8AAAABAAEAAAAVABAAAAABAAEAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAEAAAAdAAIAAAAAAAEAAAAdAAMAAAAAAAEAAAAdAAQAAAAAAAEAAAAdAAUAAAAAAAIAAAAdAAkAAAAAAAAAAAAdAAoAAAAAAAEAAAAdAAsAAAAAAAEAAAAdAAwAAAAAAAEAAAAdAA0AAAAAAAEAAAAdAA4AAAAAAAEAAAAdAA8AAAAAAAEAAAAdABAAAAAAAAIAAAAWAAIAAAACAAAAAAAWAAMAAAACAAEAAAAWAAQAAAACAAEAAAAWAAUAAAACAAEAAAAWAAYAAAACAAEAAAAWAAcAAAACAAEAAAAWAAgAAAACAAEAAAAWAAkAAAACAAEAAAAWAAoAAAACAAEAAAAWAAsAAAACAAEAAAAWAAwAAAACAAEAAAAWAA0AAAACAAEAAAAWAA4AAAACAAEAAAAWAA8AAAACAAEAAAAWABAAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_t5hsw")
 
 [node name="character" parent="." unique_id=715284192 instance=ExtResource("3_k71jh")]
 position = Vector2(48, 400)
 
-[node name="Label" type="Label" parent="character" unique_id=852654527]
-offset_left = 177.0
-offset_top = -151.0
-offset_right = 867.0
-offset_bottom = -101.0
-text = "KEEP BUILDING FROM HERE"
-label_settings = SubResource("LabelSettings_1gqpt")
+[node name="dashcrystal" parent="." unique_id=277871119 instance=ExtResource("4_m0upo")]
+position = Vector2(552, 350)
+
+[node name="bubble" parent="." unique_id=1542422764 instance=ExtResource("5_k71jh")]
+position = Vector2(460.00003, 216)
+
+[node name="bubble2" parent="." unique_id=2102312671 instance=ExtResource("5_k71jh")]
+position = Vector2(828.00006, 56)
+
+[node name="titlelabel" type="Label" parent="." unique_id=289480256]
+offset_left = 51.0
+offset_top = 32.0
+offset_right = 271.0
+offset_bottom = 84.0
+text = "STAGE 7"
+label_settings = SubResource("LabelSettings_es86f")

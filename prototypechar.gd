@@ -1,4 +1,3 @@
-# READ LINE 50 WHEN STARTING TOMORROW/TODAY
 extends CharacterBody2D
 
 @onready var polygonchild = get_node("Polygon2D")
@@ -12,10 +11,21 @@ var dashdirection = Vector2(0, 0) # TURN ALL DASH RELATED VARIABLES INTO A STRUC
 var gravitymult = 0
 var timer = 0
 var wallchecktimer = 0
+var groundtimer = 0.05
 var coyotestate = false
 var coyoteframes = 0.12
 var previousframeonground = true
 var wallcheck = false
+var bubblestate = false #for bubble work on this after making the bubble
+var bubbletimer = 0
+var bubbletimer2 = 0
+
+signal changescreen
+
+func _ready():
+	Eventbus.resetdash.connect(_on_dashcrystal_collected)
+	Eventbus.enterbubble.connect(_on_bubble_entered)
+	Eventbus.bubbledash.connect(_on_bubbledash)
 
 func _physics_process(delta: float) -> void:
 	if timer <= 0 && is_dashing == true:
@@ -74,13 +84,14 @@ func _physics_process(delta: float) -> void:
 	if wallchecktimer > 0:
 		wallchecktimer -= delta
 		
-	if global_position.x > 944:
-		global_position.x = 944
-	elif global_position.x < 16:
-		global_position.x = 16
-		dashcount = 0
+	if global_position.x > 976:
+		global_position.x = -16
+	elif global_position.x < -16:
+		global_position.x = 976
 	if global_position.y > 556:
-		global_position.y = -16
+		global_position.y = 16
+	elif global_position.y < 16:
+		global_position.y = 16
 		
 	if previousframeonground == true && !is_on_floor() && velocity.y >= 0:
 		coyotestate = true
@@ -90,7 +101,16 @@ func _physics_process(delta: float) -> void:
 		coyotestate = false
 		coyoteframes = 0.12
 	previousframeonground = is_on_floor() # fix bug where you can't jump during coyote frames
-		
+	
+	
+	if bubbletimer <= 0 && bubbletimer2 > 0:
+		dashcount = 0
+	
+	if bubbletimer > 0:
+		bubbletimer -= delta
+	if bubbletimer2 > 0:
+		bubbletimer2 -= delta
+	
 	get_direction()
 		
 	if Input.is_action_just_pressed("dash"):
@@ -99,16 +119,26 @@ func _physics_process(delta: float) -> void:
 			dashcount += 1
 			timer = 0.15
 	
-	if is_on_floor() && is_dashing == false:
-		is_dashing = false
-		dashcount = 0
-		timer = 0.15
+	if is_on_floor():
+		if groundtimer > 0:
+			groundtimer -= delta
+		else:
+			groundtimer = 0.05
+			dashcount = 0
+	
+	if bubbletimer > 0: # MAKE SO THAT AFTER LEAVING BUBBLE DASH GETS RESTORED, BUT ONLY AFTER LEAVING BUBBLE
+		bubbletimer -= delta
+	else:
+		pass
 	
 	if is_dashing == true:
 		timer -= delta
 		velocity.x = (dashspeed * dashdirection.x * 1.5) # the 1.5 just makes the physics work nicer
 		velocity.y = (dashspeed * dashdirection.y * 1.4) # same with the 1.4, the physics just works nicer
-
+	if bubblestate == true:
+		velocity = Vector2(0, 0)
+		visible = false
+	
 	#recolouring based on dash
 	if dashcount == 1:
 		polygonchild.color = Color("04D9FF")
@@ -135,3 +165,22 @@ func get_direction():
 	# for left/right
 	# this automatically assumes to not dash if player isnt actively pressing left
 	# fix this later to dash the direction the player is facing
+		
+
+func _on_dashcrystal_collected():
+	dashcount = 0
+
+func _on_bubble_entered(bubbleposition: Vector2):
+	global_position = bubbleposition
+	bubblestate = true
+
+func _on_bubbledash():
+	get_direction()
+	velocity.x = (dashspeed * dashdirection.x * 1.5) # the 1.5 just makes the physics work nicer
+	velocity.y = (dashspeed * dashdirection.y * 1.4) # same with the 1.4, the physics just works nicer
+	print("dashreset")
+	visible = true
+	bubblestate = false
+	bubbletimer = 0.05
+	bubbletimer2 = 0.06
+	dashcount = 0

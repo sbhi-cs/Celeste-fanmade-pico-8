@@ -41,6 +41,10 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h16f0")
 
+[sub_resource type="LabelSettings" id="LabelSettings_eljyk"]
+font = ExtResource("2_u5qfc")
+font_size = 75
+
 [node name="stage1" type="Node2D" unique_id=1827562647]
 script = ExtResource("1_h16f0")
 
@@ -112,6 +116,14 @@ tile_set = SubResource("TileSet_1gqpt")
 
 [node name="character" parent="." unique_id=715284192 instance=ExtResource("3_u5qfc")]
 position = Vector2(48, 400)
+
+[node name="titlelabel" type="Label" parent="." unique_id=683059374]
+offset_left = 366.0
+offset_top = -1.0
+offset_right = 577.0
+offset_bottom = 51.0
+text = "STAGE 1"
+label_settings = SubResource("LabelSettings_eljyk")
 
 [connection signal="body_entered" from="Area2D" to="Label3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Label4" method="_on_area_2d_2_body_entered"]

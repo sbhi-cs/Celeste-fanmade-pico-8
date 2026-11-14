@@ -38,6 +38,10 @@ sources/0 = SubResource("TileSetAtlasSource_xmr8i")
 font = ExtResource("3_sefsa")
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_iuqe0"]
+font = ExtResource("3_sefsa")
+font_size = 75
+
 [node name="Stage_3" type="Node2D" unique_id=1258435919]
 script = ExtResource("1_sefsa")
 
@@ -167,3 +171,11 @@ offset_bottom = 346.0
 text = "DASH CRYSTALS RESET DASH"
 label_settings = SubResource("LabelSettings_1gqpt")
 autowrap_mode = 2
+
+[node name="titlelabel" type="Label" parent="." unique_id=1297486074]
+offset_left = 538.0
+offset_top = 471.0
+offset_right = 758.0
+offset_bottom = 523.0
+text = "STAGE 3"
+label_settings = SubResource("LabelSettings_iuqe0")

@@ -11,7 +11,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("tomenu"):
+		get_tree().change_scene_to_file("res://menu_screen.tscn")
+		Global.stage = 1
 
 func _change_screen():
 	get_tree().change_scene_to_file("res://stage_" + str(Global.stage+1) + ".tscn")

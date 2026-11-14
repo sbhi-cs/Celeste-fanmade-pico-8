@@ -39,6 +39,10 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oir3g")
 
+[sub_resource type="LabelSettings" id="LabelSettings_bxg2w"]
+font = ExtResource("2_oir3g")
+font_size = 75
+
 [node name="Stage_6" type="Node2D" unique_id=2041017665]
 script = ExtResource("1_bxg2w")
 
@@ -237,3 +241,11 @@ scale = Vector2(7, 7)
 [node name="bubble5" parent="." unique_id=698883187 instance=ExtResource("4_pi7pv")]
 position = Vector2(871.99994, 287.00006)
 scale = Vector2(7, 7)
+
+[node name="titlelabel" type="Label" parent="." unique_id=241017773]
+offset_left = 534.0
+offset_top = 254.0
+offset_right = 754.0
+offset_bottom = 306.0
+text = "STAGE 6"
+label_settings = SubResource("LabelSettings_bxg2w")

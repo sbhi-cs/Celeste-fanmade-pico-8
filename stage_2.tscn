@@ -37,6 +37,10 @@ sources/0 = SubResource("TileSetAtlasSource_1h6kk")
 font = ExtResource("6_1h6kk")
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_1h6kk"]
+font = ExtResource("6_1h6kk")
+font_size = 75
+
 [node name="stage_2" type="Node2D" unique_id=1767082464]
 script = ExtResource("1_8r3qg")
 
@@ -88,3 +92,11 @@ offset_right = 559.0
 offset_bottom = 408.0
 text = "SPIKES KILL"
 label_settings = SubResource("LabelSettings_1gqpt")
+
+[node name="titlelabel" type="Label" parent="." unique_id=1457134918]
+offset_left = 677.0
+offset_top = 48.0
+offset_right = 897.0
+offset_bottom = 100.0
+text = "STAGE 2"
+label_settings = SubResource("LabelSettings_1h6kk")

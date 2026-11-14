@@ -38,6 +38,10 @@ sources/0 = SubResource("TileSetAtlasSource_8xx4j")
 font = ExtResource("7_tjls6")
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_tjls6"]
+font = ExtResource("7_tjls6")
+font_size = 75
+
 [node name="Stage_5" type="Node2D" unique_id=1157156597]
 script = ExtResource("1_lmca4")
 
@@ -178,3 +182,11 @@ offset_bottom = 72.0
 text = "WORLD 2 ->"
 label_settings = SubResource("LabelSettings_1gqpt")
 horizontal_alignment = 1
+
+[node name="titlelabel" type="Label" parent="." unique_id=1656291180]
+offset_left = 507.0
+offset_top = 374.0
+offset_right = 727.0
+offset_bottom = 426.0
+text = "STAGE 5"
+label_settings = SubResource("LabelSettings_tjls6")

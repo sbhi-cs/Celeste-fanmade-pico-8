@@ -90,6 +90,7 @@ func _physics_process(delta: float) -> void:
 	elif global_position.x < 16:
 		global_position.x = 16
 	if global_position.y > 556:
+		Global.deaths += 1
 		global_position = Vector2(48 , 400)
 	elif global_position.y < 16:
 		global_position.y = 16
